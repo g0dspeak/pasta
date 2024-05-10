@@ -111,7 +111,7 @@ inline bool daemonize(
 	}
 	else
 	{
-		//GULPS_PRINT("Ryo '", RYO_RELEASE_NAME, " (", PASTA_VERSION_FULL, ")");
+		//GULPS_PRINT("Ryo '", PASTA_RELEASE_NAME, " (", PASTA_VERSION_FULL, ")");
 		return executor.run_interactive(vm);
 	}
 }

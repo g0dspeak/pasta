@@ -144,7 +144,7 @@ boost::optional<boost::program_options::variables_map> main(
 
 		if(command_line::get_arg(vm, command_line::arg_help))
 		{
-			GULPS_PRINT_OK("Ryo '", RYO_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")\n\n");
+			GULPS_PRINT_OK("Ryo '", PASTA_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")\n\n");
 			GULPS_PRINT_OK(wallet_args::tr("This is the command line ryo wallet. It needs to connect to a ryo daemon to work correctly."), "\n\n");
 			GULPS_PRINT_OK(wallet_args::tr("Usage:"), "\n  ", usage);
 			GULPS_PRINT_OK(desc_all,"\n");
@@ -153,7 +153,7 @@ boost::optional<boost::program_options::variables_map> main(
 		}
 		else if(command_line::get_arg(vm, command_line::arg_version))
 		{
-			GULPS_PRINT_OK("Ryo '", RYO_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")");
+			GULPS_PRINT_OK("Ryo '", PASTA_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")");
 			error_code = 0;
 			return false;
 		}
@@ -248,7 +248,7 @@ boost::optional<boost::program_options::variables_map> main(
 	if(!command_line::is_arg_defaulted(vm, arg_max_concurrency))
 		tools::set_max_concurrency(command_line::get_arg(vm, arg_max_concurrency));
 
-	GULPS_PRINT_OK("Ryo '", RYO_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")");
+	GULPS_PRINT_OK("Ryo '", PASTA_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")");
 
 	error_code = 0;
 	return {std::move(vm)};

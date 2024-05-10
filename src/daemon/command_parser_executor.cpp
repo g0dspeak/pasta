@@ -706,7 +706,7 @@ bool t_command_parser_executor::sync_info(const std::vector<std::string> &args)
 
 bool t_command_parser_executor::version(const std::vector<std::string> &args)
 {
-	GULPSF_PRINT("Ryo '{}' ({})", RYO_RELEASE_NAME, PASTA_VERSION_FULL);
+	GULPSF_PRINT("Ryo '{}' ({})", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
 	return true;
 }
 
