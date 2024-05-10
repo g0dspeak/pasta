@@ -381,18 +381,18 @@ std::set<std::string> node_server<t_payload_net_handler>::get_seed_nodes(crypton
 	std::set<std::string> full_addrs;
 	if(nettype == cryptonote::TESTNET)
 	{
-		full_addrs.insert("185.134.22.134:13310");
+		/*full_addrs.insert("185.134.22.134:13310");
 		full_addrs.insert("81.19.208.43:13310");
-		full_addrs.insert("149.56.44.109:13310");
+		full_addrs.insert("149.56.44.109:13310");*/
 	}
 	else if(nettype == cryptonote::STAGENET)
 	{
 	}
 	else
 	{
-		full_addrs.insert("185.134.22.134:12210");
+		/*full_addrs.insert("185.134.22.134:12210");
 		full_addrs.insert("81.19.208.43:12210");
-		full_addrs.insert("149.56.44.109:12210");
+		full_addrs.insert("149.56.44.109:12210");*/
 	}
 	return full_addrs;
 }
@@ -1406,7 +1406,7 @@ int node_server<t_payload_net_handler>::handle_get_stat_info(int command, typena
 	}
 	rsp.connections_count = m_net_server.get_config_object().get_connections_count();
 	rsp.incoming_connections_count = rsp.connections_count - get_outgoing_connections_count();
-	rsp.version = RYO_VERSION_FULL;
+	rsp.version = PASTA_VERSION_FULL;
 	rsp.os_version = tools::get_os_version_string();
 	m_payload_handler.get_stat_info(rsp.payload_info);
 	return 1;
