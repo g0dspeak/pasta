@@ -62,7 +62,7 @@
 #define CRYPTONOTE_DEFAULT_TX_SPENDABLE_AGE 10
 
 // MONEY_SUPPLY - total number coins to be generated
-#define MONEY_SUPPLY ((uint64_t)88888888000000000)
+#define MONEY_SUPPLY ((uint64_t)200000000000000000)
 #define EMISSION_SPEED_FACTOR 19
 #define FINAL_SUBSIDY ((uint64_t)4000000000)			  // 4 * pow(10, 9)
 #define GENESIS_BLOCK_REWARD ((uint64_t)8800000000000000) // ~10% dev premine, now  mostly burned
@@ -110,7 +110,7 @@
 
 #define ALLOW_DEBUG_COMMANDS
 
-#define CRYPTONOTE_NAME "ryo"
+#define CRYPTONOTE_NAME "pasta"
 #define CRYPTONOTE_POOLDATA_FILENAME "poolstate.bin"
 #define CRYPTONOTE_BLOCKCHAINDATA_FILENAME "data.mdb"
 #define CRYPTONOTE_BLOCKCHAINDATA_LOCK_FILENAME "lock.mdb"
@@ -142,7 +142,7 @@ static constexpr std::array<uint64_t, 48> COIN_EMISSION_STEPS = {{
 	4670000000, 4360000000, 4080000000
 }};
 
-#define TX_FORK_ID_STR "ryo-currency"
+#define TX_FORK_ID_STR "pasta-money"
 
 template <typename T, std::size_t N>
 constexpr std::size_t countof(T const (&)[N]) noexcept
@@ -226,7 +226,7 @@ struct common_config
 	static constexpr uint64_t POISSON_CHECK_DEPTH = 60;   // Main-chain depth of the poisson check. The attacker will have to tamper 50% of those blocks
 	static constexpr double POISSON_LOG_P_REJECT = -75.0; // Reject reorg if the probablity that the timestamps are genuine is below e^x, -75 = 10^-33
 
-	static constexpr uint64_t DIFFICULTY_TARGET = 240; // 4 minutes
+	static constexpr uint64_t DIFFICULTY_TARGET = 120; // 4 minutes
 
 	/////////////// V1 difficulty constants
 	static constexpr uint64_t DIFFICULTY_WINDOW_V1 = 720; // blocks
@@ -329,9 +329,9 @@ struct config<TESTNET>
 	static constexpr uint64_t RYO_LONG_INTEGRATED_ADDRESS_BASE58_PREFIX = 0x29e192; // RYoE
 	static constexpr uint64_t RYO_LONG_SUBADDRESS_BASE58_PREFIX = 0x30e192;			// RYoU
 
-	static constexpr uint16_t P2P_DEFAULT_PORT = 13310;
-	static constexpr uint16_t RPC_DEFAULT_PORT = 13311;
-	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 13312;
+	static constexpr uint16_t P2P_DEFAULT_PORT = 15555;
+	static constexpr uint16_t RPC_DEFAULT_PORT = 15566;
+	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 15577;
 
 	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x6f, 0x81, 0x7d, 0x7e, 0xa2, 0x0b, 0x71, 0x77, 0x22, 0xc8, 0xd2, 0xff, 0x02, 0x5d, 0xe9, 0x92 } };
 
@@ -367,7 +367,7 @@ struct config<STAGENET>
 	static constexpr uint16_t RPC_DEFAULT_PORT = 14411;
 	static constexpr uint16_t ZMQ_RPC_DEFAULT_PORT = 14412;
 
-	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x15, 0x77, 0x3a, 0x26, 0x42, 0xa0, 0x3f, 0xf3, 0xe5, 0x79, 0x72, 0x8d, 0x4e, 0x5a, 0xf2, 0x98 } };
+	static constexpr boost::uuids::uuid NETWORK_ID = { { 0x15, 0x77, 0x3a, 0x26, 0x42, 0xa0, 0x3f, 0xf3, 0xf4, 0x79, 0x72, 0x8d, 0x4e, 0x5a, 0xf2, 0x98 } };
 
 	static constexpr const char *GENESIS_TX =
 		"013c01ff0001ffffffffffff0302df5d56da0c7d643ddd1ce61901c7bdc5fb1738bfe39fbe69c28a3a7032729c0f2101168d0c4ca86fb55a4cf6a36d31431be1c53a3bd7411bb24e8832410289fa6f3b";
