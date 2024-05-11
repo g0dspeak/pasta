@@ -79,7 +79,7 @@ const command_line::arg_descriptor<bool> arg_trusted_daemon = {"trusted-daemon",
 const command_line::arg_descriptor<std::string> arg_wallet_dir = {"wallet-dir", "Directory for newly created wallets"};
 const command_line::arg_descriptor<bool> arg_prompt_for_password = {"prompt-for-password", "Prompts for password when not provided", false};
 
-constexpr const char default_rpc_username[] = "ryo";
+constexpr const char default_rpc_username[] = "pasta";
 
 boost::optional<tools::password_container> password_prompter(const char *prompt, bool verify)
 {
@@ -207,7 +207,7 @@ bool wallet_rpc_server::init(const boost::program_options::variables_map *vm)
 				default_rpc_username,
 				string_encoding::base64_encode(rand_128bit.data(), rand_128bit.size()));
 
-			std::string temp = "ryo-wallet-rpc." + bind_port + ".login";
+			std::string temp = "pasta-wallet-rpc." + bind_port + ".login";
 			rpc_login_file = tools::private_file::create(temp);
 			if(!rpc_login_file.handle())
 			{
@@ -3045,11 +3045,11 @@ int main(int argc, char **argv)
 	int vm_error_code = 1;
 	const auto vm = wallet_args::main(
 		argc, argv,
-		"ryo-wallet-rpc [--wallet-file=<file>|--generate-from-json=<file>|--wallet-dir=<directory>] [--rpc-bind-port=<port>]",
-		tools::wallet_rpc_server::tr("This is the RPC ryo wallet. It needs to connect to a ryo daemon to work correctly."),
+		"pasta-wallet-rpc [--wallet-file=<file>|--generate-from-json=<file>|--wallet-dir=<directory>] [--rpc-bind-port=<port>]",
+		tools::wallet_rpc_server::tr("This is the RPC pasta wallet. It needs to connect to a pasta daemon to work correctly."),
 		desc_params,
 		po::positional_options_description(),
-		"ryo-wallet-rpc.log",
+		"pasta-wallet-rpc.log",
 		vm_error_code,
 		true);
 	if(!vm)
