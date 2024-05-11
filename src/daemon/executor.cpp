@@ -71,7 +71,7 @@ std::string const &t_executor::name()
 t_daemon t_executor::create_daemon(
 	boost::program_options::variables_map const &vm)
 {
-	GULPS_PRINT("pasta '{} ({}) Daemonised", pasta_RELEASE_NAME, pasta_VERSION_FULL);
+	GULPS_PRINT("pasta '{} ({}) Daemonised");
 	return t_daemon{vm};
 }
 

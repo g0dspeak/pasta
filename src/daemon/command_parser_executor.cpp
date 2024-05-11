@@ -706,7 +706,7 @@ bool t_command_parser_executor::sync_info(const std::vector<std::string> &args)
 
 bool t_command_parser_executor::version(const std::vector<std::string> &args)
 {
-	GULPSF_PRINT("pasta '{}' ({})", pasta_RELEASE_NAME, pasta_VERSION_FULL);
+	/*GULPSF_PRINT("pasta '{}' ({})", pasta_RELEASE_NAME, pasta_VERSION_FULL);*/
 	return true;
 }
 
