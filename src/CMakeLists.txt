@@ -104,7 +104,7 @@ endfunction()
 
 function (pasta_add_library_with_deps)
   cmake_parse_arguments(pasta_ADD_LIBRARY "" "NAME" "DEPENDS;SOURCES" ${ARGN})
-  source_group("$pasta_ADD_LIBRARY_NAME}" FILES ${PASTA_ADD_LIBRARY_SOURCES})
+  source_group("$pasta_ADD_LIBRARY_NAME}" FILES $pasta_ADD_LIBRARY_SOURCES})
 
   # Define a ("virtual") object library and an actual library that links those
   # objects together. The virtual libraries can be arbitrarily combined to link
