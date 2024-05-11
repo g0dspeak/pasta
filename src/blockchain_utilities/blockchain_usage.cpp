@@ -200,7 +200,7 @@ int main(int argc, char *argv[])
 
 	if(command_line::get_arg(vm, command_line::arg_help))
 	{
-		GULPS_PRINT("pasta '", pasta_RELEASE_NAME, "' (", pasta_VERSION_FULL, ")");
+		/*GULPS_PRINT("pasta '", pasta_RELEASE_NAME, "' (", pasta_VERSION_FULL, ")");*/
 		GULPS_PRINT(desc_options);
 		return 0;
 	}
