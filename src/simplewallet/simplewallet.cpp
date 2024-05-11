@@ -1596,7 +1596,7 @@ bool simple_wallet::save_known_rings(const std::vector<std::string> &args)
 
 bool simple_wallet::version(const std::vector<std::string> &args)
 {
-	GULPS_PRINT_OK("pasta '", pasta_RELEASE_NAME, "' (", pasta_VERSION_FULL, ")");
+	/*GULPS_PRINT_OK("pasta '", pasta_RELEASE_NAME, "' (", pasta_VERSION_FULL, ")");*/
 	return true;
 }
 
