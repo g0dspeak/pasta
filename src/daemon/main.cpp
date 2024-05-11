@@ -155,7 +155,7 @@ int main(int argc, char* argv[])
 
 		if(command_line::get_arg(vm, command_line::arg_help))
 		{
-			GULPSF_PRINT("pasta '{}' ({})\n", pasta_RELEASE_NAME , pasta_VERSION_FULL );
+			GULPSF_PRINT("pasta '{}' ({})\n" );
 			GULPSF_PRINT("\nUsage: {} [options|settings] [daemon_command...]\n\n", std::string{argv[0]});
 			GULPS_PRINT(visible_options);
 			return 0;
@@ -164,7 +164,7 @@ int main(int argc, char* argv[])
 		// pasta Version
 		if(command_line::get_arg(vm, command_line::arg_version))
 		{
-			GULPSF_PRINT("pasta '{}' ({})\n", pasta_RELEASE_NAME , pasta_VERSION_FULL );
+			GULPSF_PRINT("pasta '{}' ({})\n" );
 			return 0;
 		}
 
@@ -370,7 +370,7 @@ int main(int argc, char* argv[])
 		gulps::inst().remove_output(temp_out_id);
 
 		// logging is now set up
-		GULPSF_GLOBAL_PRINT("pasta '{}' ({})", pasta_RELEASE_NAME, pasta_VERSION_FULL);
+		GULPSF_GLOBAL_PRINT("pasta '{}' ({})");
 
 		GULPS_INFO("Moving from main() into the daemonize now.");
 
