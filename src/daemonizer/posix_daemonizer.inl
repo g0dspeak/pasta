@@ -111,7 +111,7 @@ inline bool daemonize(
 	}
 	else
 	{
-		//GULPS_PRINT("pasta '", PASTA_RELEASE_NAME, " (", PASTA_VERSION_FULL, ")");
+		//GULPS_PRINT("pasta '", pasta_RELEASE_NAME, " (", pasta_VERSION_FULL, ")");
 		return executor.run_interactive(vm);
 	}
 }
