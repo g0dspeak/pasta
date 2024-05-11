@@ -1,4 +1,4 @@
-# Copyright (c) 2020, Ryo Currency Project
+# Copyright (c) 2020, pasta Currency Project
 # Portions copyright (c) 2014-2018, The Monero Project
 #
 # Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -92,9 +92,9 @@ if(HAVE_EC_64)
     ecops64/ecops64.h)
 endif()
 
-ryo_private_headers(cncrypto
+pasta_private_headers(cncrypto
   ${crypto_private_headers})
-ryo_add_library(cncrypto
+pasta_add_library(cncrypto
   ${crypto_sources}
   ${crypto_headers}
   ${crypto_private_headers})
@@ -109,7 +109,7 @@ target_link_libraries(cncrypto
 if(BUILD_TESTS)
   # if tests are enabled than build a special crypto library with a deterministic
   # random number generator, this lib is than used for the test `crypto`
-  ryo_add_library(cncrypto_for_test
+  pasta_add_library(cncrypto_for_test
     ${crypto_sources}
     ${crypto_headers}
     ${crypto_private_headers})

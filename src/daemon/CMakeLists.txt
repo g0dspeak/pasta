@@ -124,5 +124,5 @@ target_link_libraries(daemon
     fmt::fmt-header-only)
 set_property(TARGET daemon
   PROPERTY
-    OUTPUT_NAME "ryod")
+    OUTPUT_NAME "pastad")
 install(TARGETS daemon DESTINATION bin)

@@ -1,4 +1,4 @@
-# Copyright (c) 2020, Ryo Currency Project
+# Copyright (c) 2020, pasta Currency Project
 # Portions copyright (c) 2014-2018, The Monero Project
 #
 # Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -69,9 +69,9 @@ if (BERKELEY_DB)
   )
 endif()
 
-ryo_private_headers(blockchain_db
+pasta_private_headers(blockchain_db
   ${crypto_private_headers})
-ryo_add_library(blockchain_db
+pasta_add_library(blockchain_db
   ${blockchain_db_sources}
   ${blockchain_db_headers}
   ${blockchain_db_private_headers})
