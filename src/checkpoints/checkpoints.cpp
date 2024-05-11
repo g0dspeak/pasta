@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -183,7 +183,7 @@ bool checkpoints::init_default_checkpoints(network_type nettype)
 		/*ADD_CHECKPOINT(1,      "770309bd74bcebf90eb6f1197ad51601f917314088c5b1343316a4f581c51193");
 		ADD_CHECKPOINT(10,     "d5f139ed1cdc14ff2dda722de9ee2236f4030d18670e4ef6b41ab74e57a0a816");
 		ADD_CHECKPOINT(50000,  "3d251e3802cc5f6721babf8762bc13fdbc57df694c59759f3baba8d28b7d97c0");
-		ADD_CHECKPOINT(122670, "6ba1f78526997681363b2800c942fc56d3a92ac462e3393ba27d0c5611614193"); // ryo
+		ADD_CHECKPOINT(122670, "6ba1f78526997681363b2800c942fc56d3a92ac462e3393ba27d0c5611614193"); // pasta
 		ADD_CHECKPOINT(129749, "8393ff500fd806fd2364416076b7231af623d614dc080bfd1c7d59102c14c25a");*/
 		return true;
 	}
@@ -206,7 +206,7 @@ bool checkpoints::init_default_checkpoints(network_type nettype)
 		ADD_CHECKPOINT(75000,  "b26f4e1225569da282b77659020bace52e5e89abbdee33e9e52266b1e71803a5");
 		ADD_CHECKPOINT(100000, "ffe474fe8353f90700c8138ddea3547d5c1e4a6facb1df85897e7a6e4daab540");
 		ADD_CHECKPOINT(116520, "da1cb8f30305cd5fad7d6c33b3ed88fede053e0926102d8e544b65e93e33a08b"); // v3 fork
-		ADD_CHECKPOINT(137500, "86a5ccbf6ef872e074a63440b980f0543b3177745bf2c6fd268f93164a277e8b"); // ryo fork
+		ADD_CHECKPOINT(137500, "86a5ccbf6ef872e074a63440b980f0543b3177745bf2c6fd268f93164a277e8b"); // pasta fork
 		ADD_CHECKPOINT(137512, "008f4867478e8060352610b145055ad81b655a0f082f350505def8267275a1bd");
 		ADD_CHECKPOINT(150000, "debc58ac64fc8dc7ae35b0b8782ae33a0fe5855dc85930bc52b8fec3c1aee94a"); // v4 fork
 		ADD_CHECKPOINT(161500, "bd612bd580e3add2c41a2a3222bca09ff1d16755405c0d11e4c00dec637e574d"); // v5 fork*/

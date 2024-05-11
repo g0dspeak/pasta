@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -1144,8 +1144,8 @@ bool t_rpc_command_executor::stop_daemon()
 	//# ifdef WIN32
 	//    // Stop via service API
 	//    // TODO - this is only temporary!  Get rid of hard-coded constants!
-	//    bool ok = windows::stop_service("Ryo Daemon");
-	//    ok = windows::uninstall_service("Ryo Daemon");
+	//    bool ok = windows::stop_service("pasta Daemon");
+	//    ok = windows::uninstall_service("pasta Daemon");
 	//    //bool ok = windows::stop_service(SERVICE_NAME);
 	//    //ok = windows::uninstall_service(SERVICE_NAME);
 	//    if (ok)
@@ -1190,11 +1190,11 @@ bool t_rpc_command_executor::print_status()
 
 	if(daemon_is_alive)
 	{
-		GULPS_PRINT_SUCCESS( "ryod is running");
+		GULPS_PRINT_SUCCESS( "pastad is running");
 	}
 	else
 	{
-		GULPS_PRINT_FAIL( "ryod is NOT running");
+		GULPS_PRINT_FAIL( "pastad is NOT running");
 	}
 
 	return true;

@@ -1,4 +1,4 @@
-# Ryo Blockchain Utilities
+# pasta Blockchain Utilities
 
 Copyright (c) 2014-2018, The Monero Project
 
@@ -12,16 +12,16 @@ See also each utility's "--help" option.
 
 ### Export an existing blockchain database
 
-`$ ryo-blockchain-export`
+`$ pasta-blockchain-export`
 
-This loads the existing blockchain and exports it to `$RYO_DATA_DIR/export/blockchain.raw`
+This loads the existing blockchain and exports it to `$pasta_DATA_DIR/export/blockchain.raw`
 
 ### Import the exported file
 
-`$ ryo-blockchain-import`
+`$ pasta-blockchain-import`
 
-This imports blocks from `$RYO_DATA_DIR/export/blockchain.raw` (exported using the
-`ryo-blockchain-export` tool as described above) into the current database.
+This imports blocks from `$pasta_DATA_DIR/export/blockchain.raw` (exported using the
+`pasta-blockchain-export` tool as described above) into the current database.
 
 Defaults: `--batch on`, `--batch size 20000`, `--verify on`
 
@@ -30,14 +30,14 @@ Batch size refers to number of blocks and can be adjusted for performance based 
 Verification should only be turned off if importing from a trusted blockchain.
 
 If you encounter an error like "resizing not supported in batch mode", you can just re-run
-the `ryo-blockchain-import` command again, and it will restart from where it left off.
+the `pasta-blockchain-import` command again, and it will restart from where it left off.
 
 ```bash
 ## use default settings to import blockchain.raw into database
-$ ryo-blockchain-import
+$ pasta-blockchain-import
 
 ## fast import with large batch size, database mode "fastest", verification off
-$ ryo-blockchain-import --batch-size 20000 --database lmdb#fastest --verify off
+$ pasta-blockchain-import --batch-size 20000 --database lmdb#fastest --verify off
 
 ```
 
@@ -80,9 +80,9 @@ LMDB flags (more than one may be specified):
 ## Examples:
 
 ```
-$ ryo-blockchain-import --database lmdb#fastest
+$ pasta-blockchain-import --database lmdb#fastest
 
-$ ryo-blockchain-import --database lmdb#nosync
+$ pasta-blockchain-import --database lmdb#nosync
 
-$ ryo-blockchain-import --database lmdb#nosync,nometasync
+$ pasta-blockchain-import --database lmdb#nosync,nometasync
 ```

@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -115,7 +115,7 @@ static const command_line::arg_descriptor<uint64_t> arg_show_time_stats = {
 static const command_line::arg_descriptor<size_t> arg_block_sync_size = {
 	"block-sync-size", "How many blocks to sync at once during chain synchronization (0 = adaptive).", 0};
 static const command_line::arg_descriptor<std::string> arg_check_updates = {
-	"check-updates", "Check for new versions of ryo: [disabled|notify|download|update]", "notify"};
+	"check-updates", "Check for new versions of pasta: [disabled|notify|download|update]", "notify"};
 static const command_line::arg_descriptor<bool> arg_fluffy_blocks = {
 	"fluffy-blocks", "Relay blocks as fluffy blocks (obsolete, now default)", true};
 static const command_line::arg_descriptor<bool> arg_no_fluffy_blocks = {
@@ -1300,7 +1300,7 @@ bool core::on_idle()
 	{
 		std::string main_message;
 		if(m_offline)
-			main_message = "The daemon is running offline and will not attempt to sync to the Ryo network.";
+			main_message = "The daemon is running offline and will not attempt to sync to the pasta network.";
 		else
 			main_message = "The daemon will start synchronizing with the network. This may take a long time to complete.";
 			GULPS_GLOBAL_PRINT_CLR(gulps::COLOR_BOLD_YELLOW, "\n**********************************************************************\n",
@@ -1362,7 +1362,7 @@ uint8_t core::get_hard_fork_version(uint64_t height) const
 bool core::check_updates()
 {
 #if 0
-    static const char software[] = "ryo";
+    static const char software[] = "pasta";
 #ifdef BUILD_TAG
     static const char buildtag[] = BOOST_PP_STRINGIZE(BUILD_TAG);
     static const char subdir[] = "cli"; // because it can never be simple
@@ -1382,7 +1382,7 @@ bool core::check_updates()
     if (!tools::check_updates(software, buildtag, version, hash))
       return false;
 
-    if (tools::vercmp(version.c_str(), RYO_VERSION) <= 0)
+    if (tools::vercmp(version.c_str(), pasta_VERSION) <= 0)
       return true;
 
     std::string url = tools::get_update_url(software, subdir, buildtag, version, true);

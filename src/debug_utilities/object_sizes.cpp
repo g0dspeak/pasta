@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -125,12 +125,12 @@ int main(int argc, char *argv[])
 	SL(tools::wallet2::unsigned_tx_set);
 	SL(tools::wallet2::signed_tx_set);
 
-	SL(Ryo::WalletImpl);
-	SL(Ryo::AddressBookRow);
-	SL(Ryo::TransactionInfoImpl);
-	SL(Ryo::TransactionHistoryImpl);
-	SL(Ryo::PendingTransactionImpl);
-	SL(Ryo::UnsignedTransactionImpl);
+	SL(pasta::WalletImpl);
+	SL(pasta::AddressBookRow);
+	SL(pasta::TransactionInfoImpl);
+	SL(pasta::TransactionHistoryImpl);
+	SL(pasta::PendingTransactionImpl);
+	SL(pasta::UnsignedTransactionImpl);
 
 	return 0;
 }

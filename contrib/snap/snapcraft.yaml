@@ -9,23 +9,23 @@ grade: devel
 confinement: strict
 
 apps:
-    ryod:
+    pastad:
         daemon: forking
         command: |
-          ryod-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/ryod.conf
+          pastad-wrapper --detach --data-dir ${SNAP_COMMON} --config-file ${SNAP_USER_DATA}/etc/pastad.conf
         plugs:
             - network
             - network-bind
-    ryo-wallet-rpc:
+    pasta-wallet-rpc:
         command: |
-          ryo-wallet-rpc --log-file ${SNAP_USER_DATA}
+          pasta-wallet-rpc --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
             - network-bind
-    ryo-wallet-cli:
+    pasta-wallet-cli:
         command: |
-          ryo-wallet-cli --log-file ${SNAP_USER_DATA}
+          pasta-wallet-cli --log-file ${SNAP_USER_DATA}
         plugs:
             - home
             - network
@@ -71,8 +71,8 @@ parts:
         plugin: dump
         source: .
         organize:
-            contrib/snap/ryod.conf: etc/ryod.conf
-            contrib/snap/ryod-wrapper: bin/ryod-wrapper
+            contrib/snap/pastad.conf: etc/pastad.conf
+            contrib/snap/pastad-wrapper: bin/pastad-wrapper
         prime:
             - etc
             - bin

@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -266,7 +266,7 @@ bool miner::init(const boost::program_options::variables_map &vm, network_type n
 
 		if(command_line::get_arg(vm, arg_start_mining) == common_config::DEV_FUND_ADDRESS)
 		{
-			GULPSF_LOG_ERROR("Dev fund address is not mineable. If you would like to support the dev team please mine to {}",  common_config::RYO_DONATION_ADDR);
+			GULPSF_LOG_ERROR("Dev fund address is not mineable. If you would like to support the dev team please mine to {}",  common_config::pasta_DONATION_ADDR);
 			return false;
 		}
 

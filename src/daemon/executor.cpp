@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -55,7 +55,7 @@
 
 namespace daemonize
 {
-std::string const t_executor::NAME = "Ryo Daemon";
+std::string const t_executor::NAME = "pasta Daemon";
 
 void t_executor::init_options(
 	boost::program_options::options_description &configurable_options)
@@ -71,7 +71,7 @@ std::string const &t_executor::name()
 t_daemon t_executor::create_daemon(
 	boost::program_options::variables_map const &vm)
 {
-	GULPS_PRINT("Ryo '{} ({}) Daemonised", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
+	GULPS_PRINT("pasta '{} ({}) Daemonised", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
 	return t_daemon{vm};
 }
 

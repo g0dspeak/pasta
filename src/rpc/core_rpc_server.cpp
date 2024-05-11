@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -797,7 +797,7 @@ bool core_rpc_server::on_start_mining(const COMMAND_RPC_START_MINING::request &r
 	if(req.miner_address == common_config::DEV_FUND_ADDRESS)
 	{
 		res.status = "Dev fund address is not mineable. If you would like to support the dev team please mine to ";
-		res.status += common_config::RYO_DONATION_ADDR;
+		res.status += common_config::pasta_DONATION_ADDR;
 		GULPS_PRINT(res.status);
 		return true;
 	}
@@ -1084,7 +1084,7 @@ bool core_rpc_server::on_getblocktemplate(const COMMAND_RPC_GETBLOCKTEMPLATE::re
 	{
 		error_resp.code = CORE_RPC_ERROR_CODE_WRONG_WALLET_ADDRESS;
 		error_resp.message =  "Dev fund address is not mineable. If you would like to support the dev team please mine to ";
-		error_resp.message += common_config::RYO_DONATION_ADDR;
+		error_resp.message += common_config::pasta_DONATION_ADDR;
 		return false;
 	}
 
@@ -1855,7 +1855,7 @@ bool core_rpc_server::on_update(const COMMAND_RPC_UPDATE::request &req, COMMAND_
 {
 #if 0
     PERF_TIMER(on_update);
-    static const char software[] = "ryo";
+    static const char software[] = "pasta";
 #ifdef BUILD_TAG
     static const char buildtag[] = BOOST_PP_STRINGIZE(BUILD_TAG);
     static const char subdir[] = "cli";
@@ -1876,7 +1876,7 @@ bool core_rpc_server::on_update(const COMMAND_RPC_UPDATE::request &req, COMMAND_
       res.status = "Error checking for updates";
       return true;
     }
-    if (tools::vercmp(version.c_str(), RYO_VERSION) <= 0)
+    if (tools::vercmp(version.c_str(), pasta_VERSION) <= 0)
     {
       res.update = false;
       res.status = CORE_RPC_STATUS_OK;

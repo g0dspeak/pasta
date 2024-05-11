@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -158,14 +158,14 @@ class node_server : public epee::levin::levin_commands_handler<p2p_connection_co
 
   private:
 	const std::vector<std::string> m_seed_nodes_list =
-		{"seed1.ryo-currency.com",
-		 "seed2.ryo-currency.com",
-		 "seed3.ryo-currency.com",
-		 "seed1.ryo-currency.org",
-		 "seed2.ryo-currency.org",
-		 "seed3.ryo-currency.org",
-		 "testnet-seed.ryo-currency.com",
-		 "testnet-seed.ryo-currency.org"};
+		{"seed1.pasta-currency.com",
+		 "seed2.pasta-currency.com",
+		 "seed3.pasta-currency.com",
+		 "seed1.pasta-currency.org",
+		 "seed2.pasta-currency.org",
+		 "seed3.pasta-currency.org",
+		 "testnet-seed.pasta-currency.com",
+		 "testnet-seed.pasta-currency.org"};
 
 	bool islimitup = false;
 	bool islimitdown = false;

@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -111,7 +111,7 @@ inline bool daemonize(
 	}
 	else
 	{
-		//GULPS_PRINT("Ryo '", PASTA_RELEASE_NAME, " (", PASTA_VERSION_FULL, ")");
+		//GULPS_PRINT("pasta '", PASTA_RELEASE_NAME, " (", PASTA_VERSION_FULL, ")");
 		return executor.run_interactive(vm);
 	}
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -368,7 +368,7 @@ struct COMMAND_RPC_GET_UNSPENT_OUTS
 		std::string amount;
 		std::string address;
 		std::string view_key;
-		// OpenRyo specific
+		// Openpasta specific
 		uint64_t mixin;
 		bool use_dust;
 		std::string dust_threshold;

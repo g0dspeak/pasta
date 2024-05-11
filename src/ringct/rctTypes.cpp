@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2016, Monero Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
@@ -118,7 +118,7 @@ void dp(keyM a)
 	GULPS_PRINT("]");
 	GULPS_PRINT("\n");
 }
-void dp(ryo_amount vali)
+void dp(pasta_amount vali)
 {
 	GULPS_PRINT("x: ", vali, "\n\n");
 }
@@ -145,37 +145,37 @@ void dp(const char *st)
 //Various Conversions
 
 //uint long long to 32 byte key
-void d2h(key &amounth, const ryo_amount in)
+void d2h(key &amounth, const pasta_amount in)
 {
 	sc_0(amounth.bytes);
-	ryo_amount val = in;
+	pasta_amount val = in;
 	int i = 0;
 	while(val != 0)
 	{
 		amounth[i] = (unsigned char)(val & 0xFF);
 		i++;
-		val /= (ryo_amount)256;
+		val /= (pasta_amount)256;
 	}
 }
 
 //uint long long to 32 byte key
-key d2h(const ryo_amount in)
+key d2h(const pasta_amount in)
 {
 	key amounth;
 	sc_0(amounth.bytes);
-	ryo_amount val = in;
+	pasta_amount val = in;
 	int i = 0;
 	while(val != 0)
 	{
 		amounth[i] = (unsigned char)(val & 0xFF);
 		i++;
-		val /= (ryo_amount)256;
+		val /= (pasta_amount)256;
 	}
 	return amounth;
 }
 
 //uint long long to int[64]
-void d2b(bits amountb, ryo_amount val)
+void d2b(bits amountb, pasta_amount val)
 {
 	int i = 0;
 	while(val != 0)
@@ -194,13 +194,13 @@ void d2b(bits amountb, ryo_amount val)
 //32 byte key to uint long long
 // if the key holds a value > 2^64
 // then the value in the first 8 bytes is returned
-ryo_amount h2d(const key &test)
+pasta_amount h2d(const key &test)
 {
-	ryo_amount vali = 0;
+	pasta_amount vali = 0;
 	int j = 0;
 	for(j = 7; j >= 0; j--)
 	{
-		vali = (ryo_amount)(vali * 256 + (unsigned char)test.bytes[j]);
+		vali = (pasta_amount)(vali * 256 + (unsigned char)test.bytes[j]);
 	}
 	return vali;
 }
@@ -248,13 +248,13 @@ void b2h(key &amountdh, const bits amountb2)
 }
 
 //int[64] to uint long long
-ryo_amount b2d(bits amountb)
+pasta_amount b2d(bits amountb)
 {
-	ryo_amount vali = 0;
+	pasta_amount vali = 0;
 	int j = 0;
 	for(j = 63; j >= 0; j--)
 	{
-		vali = (ryo_amount)(vali * 2 + amountb[j]);
+		vali = (pasta_amount)(vali * 2 + amountb[j]);
 	}
 	return vali;
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -70,7 +70,7 @@ using namespace cryptonote;
 
 
 
-namespace Ryo
+namespace pasta
 {
 
 namespace
@@ -87,7 +87,7 @@ static const int DEFAULT_CONNECTION_TIMEOUT_MILLIS = 1000 * 30;
 std::string get_default_ringdb_path()
 {
 	boost::filesystem::path dir = tools::get_default_data_dir();
-	// remove .ryo, replace with .shared-ringdb
+	// remove .pasta, replace with .shared-ringdb
 	dir = dir.remove_filename();
 	dir /= ".shared-ringdb";
 	return dir.string();
@@ -340,22 +340,22 @@ void Wallet::init(const char *argv0, const char *default_log_base_name, const st
 
 void Wallet::debug(const std::string &category, const std::string &str)
 {
-	MCDEBUG(category.empty() ? RYO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+	MCDEBUG(category.empty() ? pasta_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::info(const std::string &category, const std::string &str)
 {
-	MCINFO(category.empty() ? RYO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+	MCINFO(category.empty() ? pasta_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::warning(const std::string &category, const std::string &str)
 {
-	MCWARNING(category.empty() ? RYO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+	MCWARNING(category.empty() ? pasta_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 void Wallet::error(const std::string &category, const std::string &str)
 {
-	MCERROR(category.empty() ? RYO_DEFAULT_LOG_CATEGORY : category.c_str(), str);
+	MCERROR(category.empty() ? pasta_DEFAULT_LOG_CATEGORY : category.c_str(), str);
 }
 
 ///////////////////////// WalletImpl implementation ////////////////////////

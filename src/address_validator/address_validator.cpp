@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
 // All rights reserved.
@@ -132,7 +132,7 @@ void address_validator::init_options(
 		("network,n", po::value<std::string>(&m_network)->default_value("auto"), "network type (auto, mainnet, testnet, stagenet)")
 		("filename,f", po::value<std::string>(&m_filename), "json file name, if not set result is printed to terminal")
 		("human", po::value<bool>(&m_human)->zero_tokens()->default_value(false)->default_value(false), "human readable output")
-		("address", po::value<std::vector<std::string>>(&m_address_strs), "ryo-currency address");
+		("address", po::value<std::vector<std::string>>(&m_address_strs), "pasta-currency address");
 
 	pos_option.add("address", -1);
 }
@@ -206,8 +206,8 @@ int main(int argc, char *argv[])
 
 	namespace po = boost::program_options;
 
-	po::options_description desc("Validate RYO/SUMOKOIN addresses and show properties\n\n"
-								 "ryo-address-validator [OPTIONS] WALLET_ADDRESS [WALLET_ADDRESS...]\n\n"
+	po::options_description desc("Validate pasta/SUMOKOIN addresses and show properties\n\n"
+								 "pasta-address-validator [OPTIONS] WALLET_ADDRESS [WALLET_ADDRESS...]\n\n"
 								 "OPTIONS");
 
 	po::positional_options_description pos_option;

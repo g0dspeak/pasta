@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -215,13 +215,13 @@ int main(int argc, char *argv[])
 	int vm_error_code = 1;
 	const auto vm = wallet_args::main(
 		argc, argv,
-		"ryo-gen-multisig [(--testnet|--stagenet)] [--filename-base=<filename>] [--scheme=M/N] [--threshold=M] [--participants=N]",
+		"pasta-gen-multisig [(--testnet|--stagenet)] [--filename-base=<filename>] [--scheme=M/N] [--threshold=M] [--participants=N]",
 		genms::tr("This program generates a set of multisig wallets - use this simpler scheme only if all the participants trust each other"),
 		desc_params,
 		boost::program_options::positional_options_description(),
 		/*[](const std::string &s, bool emphasis) { tools::scoped_message_writer(emphasis ? epee::console_color_white : epee::console_color_default, true) << s; },
 		 * \todo-gulps*/
-		"ryo-gen-multisig.log",
+		"pasta-gen-multisig.log",
 		vm_error_code,
 		true);
 	if(!vm)

@@ -30,7 +30,7 @@ PEAK_COIN_EMISSION_LENGTH = 1 # years
 PEAK_COIN_EMISSION_HEIGHT = HEIGHT_PER_YEAR * PEAK_COIN_EMISSION_YEAR
 PEAK_COIN_EMISSION_HEIGHT_END = PEAK_COIN_EMISSION_HEIGHT + HEIGHT_PER_YEAR * PEAK_COIN_EMISSION_LENGTH
 
-OUTPUT = "ryo-plateau.tsv"
+OUTPUT = "pasta-plateau.tsv"
 
 def get_base_reward_compute(height, already_generated_coins):
     base_reward = 0

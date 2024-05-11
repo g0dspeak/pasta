@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -88,7 +88,7 @@ struct hash<output_data>
 static std::string get_default_db_path()
 {
 	boost::filesystem::path dir = tools::get_default_data_dir();
-	// remove .ryo, replace with .shared-ringdb
+	// remove .pasta, replace with .shared-ringdb
 	dir = dir.remove_filename();
 	dir /= ".shared-ringdb";
 	return dir.string();
@@ -209,7 +209,7 @@ int main(int argc, char *argv[])
 	const command_line::arg_descriptor<std::string> arg_database = {
 		"database", available_dbs.c_str(), default_db_type};
 	const command_line::arg_descriptor<bool> arg_rct_only = {"rct-only", "Only work on ringCT outputs", false};
-	const command_line::arg_descriptor<std::vector<std::string>> arg_inputs = {"inputs", "Path to Ryo DB, and path to any fork DBs"};
+	const command_line::arg_descriptor<std::vector<std::string>> arg_inputs = {"inputs", "Path to pasta DB, and path to any fork DBs"};
 
 	command_line::add_arg(desc_cmd_sett, arg_blackball_db_dir);
 	command_line::add_arg(desc_cmd_sett, cryptonote::arg_testnet_on);
@@ -277,7 +277,7 @@ int main(int argc, char *argv[])
 
 	if(command_line::get_arg(vm, command_line::arg_help))
 	{
-		GULPS_PRINT("Ryo '", PASTA_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")\n)");
+		GULPS_PRINT("pasta '", PASTA_RELEASE_NAME, "' (", PASTA_VERSION_FULL, ")\n)");
 		GULPS_PRINT(desc_options);
 		return 0;
 	}

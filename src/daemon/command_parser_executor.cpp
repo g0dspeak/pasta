@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -334,7 +334,7 @@ bool t_command_parser_executor::start_mining(const std::vector<std::string> &arg
 
 	if(args.front() == cryptonote::common_config::DEV_FUND_ADDRESS)
 	{
-		tools::fail_msg_writer() << "Dev fund address is not mineable. If you would like to support the dev team please mine to " << cryptonote::common_config::RYO_DONATION_ADDR << std::endl;
+		tools::fail_msg_writer() << "Dev fund address is not mineable. If you would like to support the dev team please mine to " << cryptonote::common_config::pasta_DONATION_ADDR << std::endl;
 		return true;
 	}
 
@@ -706,7 +706,7 @@ bool t_command_parser_executor::sync_info(const std::vector<std::string> &args)
 
 bool t_command_parser_executor::version(const std::vector<std::string> &args)
 {
-	GULPSF_PRINT("Ryo '{}' ({})", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
+	GULPSF_PRINT("pasta '{}' ({})", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
 	return true;
 }
 

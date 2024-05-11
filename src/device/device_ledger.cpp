@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -60,8 +60,8 @@ namespace ledger
 
 #ifdef WITH_DEVICE_LEDGER
 
-//#undef RYO_DEFAULT_LOG_CATEGORY
-//#define RYO_DEFAULT_LOG_CATEGORY
+//#undef pasta_DEFAULT_LOG_CATEGORY
+//#define pasta_DEFAULT_LOG_CATEGORY
 
 /* ===================================================================== */
 /* ===                           Debug                              ==== */

@@ -180,7 +180,7 @@ RANGE_BEGIN 0 100
 			example.com. IN DNSKEY
 		SECTION ANSWER
 			example.com.    86400   IN      DNSKEY  256 3 8 AwEAAddE7q1HL4Id+gpQ7imk+RyNEhCWgtew5tstsqIR/fXq0RBn0rF4SI1H6ysbb3nfqAV1xRDJ01ddpgfGyz9zXXHQ/H/9qEpeWapqfNTQ5GHHdxBL2iST7XusThfXEyX/pouKIpvtknvtLs8tmH64dajxoJkaejU2EKXKaBaRKcYx ;{id = 48069 (zsk), size = 1024b}
-			example.com.    86400   IN      RRSIG   DNSKEY 8 2 86400 20170609144114 20170512144114 48069 example.com. mJU3LnubfYW7vhksiC1STWbrSjCe6TG1kEpnk4jRrYovues6bzOTIFSXEMjPW1mikulapnx3nMtTWdrW2InjfP9wLV/u2Wx1Vu3s9uzli/27y//3DOkZSeBa5RZdKpC1h8UB5GAxq4MRiSidgEBB1qaDIaE29sWmn9kPHEgNcgI=
+			example.com.    86400   IN      RRSIG   DNSKEY 8 2 86400 20170609144114 20170512144114 48069 example.com. mJU3LnubfYW7vhksiC1STWbrSjCe6TG1kEpnk4jRpastavues6bzOTIFSXEMjPW1mikulapnx3nMtTWdrW2InjfP9wLV/u2Wx1Vu3s9uzli/27y//3DOkZSeBa5RZdKpC1h8UB5GAxq4MRiSidgEBB1qaDIaE29sWmn9kPHEgNcgI=
 		SECTION AUTHORITY
 			example.com.    IN NS   ns.example.com.
 			example.com.    3600    IN      RRSIG   NS 8 2 3600 20170609142855 20170512142855 48069 example.com. SYFM1dsPEly0PjdShX8EsRnpq6XTysrvUBWB+LjGaC0wn3RFd0A2TG3WhVkUxhjTzRjt9jn3rz+JUJyybrhBkYXjBeBBjLep6Le7PQSct+FFDTIuX8duixfOzEN5LSYRMUnSuAq/z0LJHUB6nqTw8XWRm6EIImdEBc6D0u1KSes=

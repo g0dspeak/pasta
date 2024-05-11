@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2016, Monero Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
@@ -50,8 +50,8 @@
 using namespace crypto;
 using namespace std;
 
-//undef RYO_DEFAULT_LOG_CATEGORY
-//#define RYO_DEFAULT_LOG_CATEGORY
+//undef pasta_DEFAULT_LOG_CATEGORY
+//#define pasta_DEFAULT_LOG_CATEGORY
 
 #define CHECK_AND_ASSERT_THROW_MES_L1(expr, ...) \
 	{                                                \
@@ -135,14 +135,14 @@ tuple<key, key> skpkGen()
 }
 
 //generates C =aG + bH from b, a is given..
-void genC(key &C, const key &a, ryo_amount amount)
+void genC(key &C, const key &a, pasta_amount amount)
 {
 	key bH = scalarmultH(d2h(amount));
 	addKeys1(C, a, bH);
 }
 
 //generates a <secret , public> / Pedersen commitment to the amount
-tuple<ctkey, ctkey> ctskpkGen(ryo_amount amount)
+tuple<ctkey, ctkey> ctskpkGen(pasta_amount amount)
 {
 	ctkey sk, pk;
 	skpkGen(sk.dest, pk.dest);
@@ -163,14 +163,14 @@ tuple<ctkey, ctkey> ctskpkGen(const key &bH)
 	return make_tuple(sk, pk);
 }
 
-key zeroCommit(ryo_amount amount)
+key zeroCommit(pasta_amount amount)
 {
 	key am = d2h(amount);
 	key bH = scalarmultH(am);
 	return addKeys(G, bH);
 }
 
-key commit(ryo_amount amount, const key &mask)
+key commit(pasta_amount amount, const key &mask)
 {
 	key c = scalarmultBase(mask);
 	key am = d2h(amount);
@@ -180,7 +180,7 @@ key commit(ryo_amount amount, const key &mask)
 }
 
 //generates a random uint long long (for testing)
-ryo_amount randRyoAmount(ryo_amount upperlimit)
+pasta_amount randpastaAmount(pasta_amount upperlimit)
 {
 	return h2d(skGen()) % (upperlimit);
 }

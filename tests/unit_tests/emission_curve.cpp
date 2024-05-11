@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -62,7 +62,7 @@ TEST(emission_curve, validate_with_lookup_table)
 	uint64_t dev_fund = 0u;
 	uint64_t height = 0u;
 
-	std::ifstream file(std::string(unit_test::data_dir.string()) + "/ryo_emission.lookup");
+	std::ifstream file(std::string(unit_test::data_dir.string()) + "/pasta_emission.lookup");
 	std::string line;
 	getline(file, line);
 
@@ -89,7 +89,7 @@ TEST(emission_curve, validate_with_lookup_table)
 		{
 			// This deliberately uses the pre v2 dev fund script to prove total emission doesn't change
 			// As such we need to check just before each dev fund emission
-			// There is a small rounding error of 5550 atomic units of Ryo
+			// There is a small rounding error of 5550 atomic units of pasta
 
 			getline(file, line);
 			std::vector< std::string > vs;

@@ -1,4 +1,4 @@
-# Copyright (c) 2020, Ryo Currency Project
+# Copyright (c) 2020, pasta Currency Project
 # Copyright (c) 2014-2018, The Monero Project
 #
 # All rights reserved.
@@ -56,7 +56,7 @@ endif()
 
 cmake_minimum_required(VERSION 3.1.0)
 
-project(ryo)
+project(pasta)
 
 # enforce C++11
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -69,7 +69,7 @@ set(CMAKE_C_EXTENSIONS OFF)
 set(CMAKE_C_STANDARD 11)
 
 # helper function to generate options
-function(ryo_option name description default)
+function(pasta_option name description default)
   set(USE_${name} ${default} CACHE STRING "${description}")
   set_property(CACHE USE_${name} PROPERTY
     STRINGS "ON;TRUE;AUTO;OFF;FALSE")
@@ -94,7 +94,7 @@ endif()
 
 ################################################################################
 ### ELLIPTIC CURVE
-ryo_option(EC_64 "use optimized x86 64bit elliptic curve implementation" AUTO)
+pasta_option(EC_64 "use optimized x86 64bit elliptic curve implementation" AUTO)
 # check if x86_64 elliptic curve implementation can be used
 if(USE_EC_64 STREQUAL AUTO)
   enable_language(ASM_NASM OPTIONAL)

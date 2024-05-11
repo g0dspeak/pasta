@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -165,7 +165,7 @@ int main(int argc, char *argv[])
 
 	if(command_line::get_arg(vm, command_line::arg_help))
 	{
-		GULPSF_PRINT("Ryo '{}' ({})\n", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
+		GULPSF_PRINT("pasta '{}' ({})\n", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
 		GULPS_PRINT(desc_options);
 		return 0;
 	}

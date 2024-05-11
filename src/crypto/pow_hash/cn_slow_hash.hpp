@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
 // All rights reserved.
@@ -251,7 +251,7 @@ class cn_slow_hash
 
 	inline bool check_override()
 	{
-		const char* env = getenv("RYO_USE_SOFTWARE_AES");
+		const char* env = getenv("pasta_USE_SOFTWARE_AES");
 		if(!env)
 		{
 			return false;

@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -51,7 +51,7 @@
 
 namespace daemon_args
 {
-std::string const WINDOWS_SERVICE_NAME = "Ryo Daemon";
+std::string const WINDOWS_SERVICE_NAME = "pasta Daemon";
 
 const command_line::arg_descriptor<std::string, false, true, 2> arg_config_file = {
 	"config-file", "Specify configuration file", (daemonizer::get_default_data_dir() / std::string(CRYPTONOTE_NAME ".conf")).string(), {{&cryptonote::arg_testnet_on, &cryptonote::arg_stagenet_on}}, [](std::array<bool, 2> testnet_stagenet, bool defaulted, std::string val) -> std::string {

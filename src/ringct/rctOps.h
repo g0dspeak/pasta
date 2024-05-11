@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2016, Monero Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
@@ -114,17 +114,17 @@ key pkGen();
 void skpkGen(key &sk, key &pk);
 std::tuple<key, key> skpkGen();
 //generates a <secret , public> / Pedersen commitment to the amount
-std::tuple<ctkey, ctkey> ctskpkGen(ryo_amount amount);
+std::tuple<ctkey, ctkey> ctskpkGen(pasta_amount amount);
 //generates C =aG + bH from b, a is random
-void genC(key &C, const key &a, ryo_amount amount);
+void genC(key &C, const key &a, pasta_amount amount);
 //this one is mainly for testing, can take arbitrary amounts..
 std::tuple<ctkey, ctkey> ctskpkGen(const key &bH);
 // make a pedersen commitment with given key
-key commit(ryo_amount amount, const key &mask);
+key commit(pasta_amount amount, const key &mask);
 // make a pedersen commitment with zero key
-key zeroCommit(ryo_amount amount);
+key zeroCommit(pasta_amount amount);
 //generates a random uint long long
-ryo_amount randRyoAmount(ryo_amount upperlimit);
+pasta_amount randpastaAmount(pasta_amount upperlimit);
 
 //Scalar multiplications of curve points
 

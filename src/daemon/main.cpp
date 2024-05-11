@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
 	}
 #endif
 
-	gulps::inst().set_thread_tag("RYOD_MAIN");
+	gulps::inst().set_thread_tag("pastaD_MAIN");
 
 	// Temporary output
 	std::unique_ptr<gulps::gulps_output> gout_ptr(new gulps::gulps_print_output(gulps::COLOR_WHITE, gulps::TEXT_ONLY));
@@ -155,16 +155,16 @@ int main(int argc, char* argv[])
 
 		if(command_line::get_arg(vm, command_line::arg_help))
 		{
-			GULPSF_PRINT("Ryo '{}' ({})\n", PASTA_RELEASE_NAME , PASTA_VERSION_FULL );
+			GULPSF_PRINT("pasta '{}' ({})\n", PASTA_RELEASE_NAME , PASTA_VERSION_FULL );
 			GULPSF_PRINT("\nUsage: {} [options|settings] [daemon_command...]\n\n", std::string{argv[0]});
 			GULPS_PRINT(visible_options);
 			return 0;
 		}
 
-		// Ryo Version
+		// pasta Version
 		if(command_line::get_arg(vm, command_line::arg_version))
 		{
-			GULPSF_PRINT("Ryo '{}' ({})\n", PASTA_RELEASE_NAME , PASTA_VERSION_FULL );
+			GULPSF_PRINT("pasta '{}' ({})\n", PASTA_RELEASE_NAME , PASTA_VERSION_FULL );
 			return 0;
 		}
 
@@ -370,7 +370,7 @@ int main(int argc, char* argv[])
 		gulps::inst().remove_output(temp_out_id);
 
 		// logging is now set up
-		GULPSF_GLOBAL_PRINT("Ryo '{}' ({})", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
+		GULPSF_GLOBAL_PRINT("pasta '{}' ({})", PASTA_RELEASE_NAME, PASTA_VERSION_FULL);
 
 		GULPS_INFO("Moving from main() into the daemonize now.");
 

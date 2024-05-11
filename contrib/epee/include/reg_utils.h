@@ -114,8 +114,8 @@ inline bool RegGetANSIString(HKEY hParentKey, const char *pSubKey, const char *p
 	return ERROR_SUCCESS == res ? true : false;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-template <class TMemoryObject>
-bool RegSetRAWValue(HKEY hKey, const char *pValName, const TMemoryObject &valToSave, DWORD valType = REG_BINARY)
+template <class TMemopastabject>
+bool RegSetRAWValue(HKEY hKey, const char *pValName, const TMemopastabject &valToSave, DWORD valType = REG_BINARY)
 {
 	LONG res = ::RegSetValueExA(hKey, pValName, 0, valType, (CONST BYTE *)valToSave.get(0), (DWORD)valToSave.get_size());
 
@@ -129,8 +129,8 @@ bool RegSetRAWValue(HKEY hKey, const char *pValName, const std::string &valToSav
 	return ERROR_SUCCESS == res ? true : false;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-template <class TMemoryObject>
-bool RegGetRAWValue(HKEY hKey, const char *pValName, TMemoryObject &valToSave, DWORD *pRegType)
+template <class TMemopastabject>
+bool RegGetRAWValue(HKEY hKey, const char *pValName, TMemopastabject &valToSave, DWORD *pRegType)
 {
 	DWORD dwType, lSize = 0;
 	LONG res = ::RegQueryValueExA(hKey, pValName, 0, &dwType, NULL, &lSize);
@@ -165,8 +165,8 @@ bool RegGetRAWValue(HKEY hKey, const char *pValName, std::string &valToSave, DWO
 	return ERROR_SUCCESS == res ? true : false;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-template <class TMemoryObject>
-bool RegSetRAWValue(HKEY hParentKey, const char *pSubKey, const char *pValName, const TMemoryObject &valToSave, DWORD valType = REG_BINARY)
+template <class TMemopastabject>
+bool RegSetRAWValue(HKEY hParentKey, const char *pSubKey, const char *pValName, const TMemopastabject &valToSave, DWORD valType = REG_BINARY)
 {
 	HKEY hRegKey = 0;
 	DWORD dw = 0;
@@ -198,8 +198,8 @@ bool RegSetRAWValue(HKEY hParentKey, const char *pSubKey, const char *pValName, 
 	return res;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
-template <class TMemoryObject>
-bool RegGetRAWValue(HKEY hParentKey, const char *pSubKey, const char *pValName, TMemoryObject &valToSave, DWORD *pRegType)
+template <class TMemopastabject>
+bool RegGetRAWValue(HKEY hParentKey, const char *pSubKey, const char *pValName, TMemopastabject &valToSave, DWORD *pRegType)
 {
 	HKEY hRegKey = 0;
 	bool res = false;

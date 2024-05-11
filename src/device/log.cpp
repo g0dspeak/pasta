@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -53,7 +53,7 @@ namespace hw
 namespace ledger
 {
 
-//undef RYO_DEFAULT_LOG_CATEGORY
+//undef pasta_DEFAULT_LOG_CATEGORY
 
 void buffer_to_str(char *to_buff, size_t to_len, const char *buff, size_t len)
 {

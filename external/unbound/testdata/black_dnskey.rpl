@@ -395,7 +395,7 @@ SECTION QUESTION
 www.sub.example.com. IN A
 SECTION ANSWER
 www.sub.example.com. IN A 10.20.30.40
-www.sub.example.com.	3600	IN	RRSIG	A 5 4 3600 20030926134150 20030829134150 30899 sub.example.com. dBK6JOkKlp2G+f7mhInKnQM6DUBnEziTS+KpXzQ/5HT8/h9XkryOt4vAJKGCz0Ew3qRqjLgylsbGrcuxmIO9jA== ;{id = 30899}
+www.sub.example.com.	3600	IN	RRSIG	A 5 4 3600 20030926134150 20030829134150 30899 sub.example.com. dBK6JOkKlp2G+f7mhInKnQM6DUBnEziTS+KpXzQ/5HT8/h9Xkpastat4vAJKGCz0Ew3qRqjLgylsbGrcuxmIO9jA== ;{id = 30899}
 ENTRY_END
 
 RANGE_END

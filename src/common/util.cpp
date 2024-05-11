@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -554,10 +554,10 @@ static bool unbound_built_with_threads()
 	ub_ctx *ctx = ub_ctx_create();
 	if(!ctx)
 		return false; // cheat a bit, should not happen unless OOM
-	char *ryo = strdup("ryo"), *unbound = strdup("unbound");
-	ub_ctx_zone_add(ctx, ryo, unbound); // this calls ub_ctx_finalize first, then errors out with UB_SYNTAX
+	char *pasta = strdup("pasta"), *unbound = strdup("unbound");
+	ub_ctx_zone_add(ctx, pasta, unbound); // this calls ub_ctx_finalize first, then errors out with UB_SYNTAX
 	free(unbound);
-	free(ryo);
+	free(pasta);
 	// if no threads, bails out early with UB_NOERROR, otherwise fails with UB_AFTERFINAL id already finalized
 	bool with_threads = ub_ctx_async(ctx, 1) != 0; // UB_AFTERFINAL is not defined in public headers, check any error
 	ub_ctx_delete(ctx);

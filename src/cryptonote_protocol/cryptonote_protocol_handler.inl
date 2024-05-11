@@ -2,7 +2,7 @@
 /// @author rfree (current maintainer/user in monero.cc project - most of code is from CryptoNote)
 /// @brief This is the original cryptonote protocol network-events handler, modified by us
 
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -1546,7 +1546,7 @@ bool t_cryptonote_protocol_handler<t_core>::on_connection_synchronized()
 	if(m_synchronized.compare_exchange_strong(val_expected, true))
 	{
 		GULPS_GLOBAL_PRINT_CLR(gulps::COLOR_BOLD_YELLOW, "\n**********************************************************************\n",
-						   "You are now synchronized with the network. You may now start ryo-wallet-cli.\n\n",
+						   "You are now synchronized with the network. You may now start pasta-wallet-cli.\n\n",
 						   "Use the \"help\" command to see the list of available commands.\n",
 						   "**********************************************************************\n");
 		m_core.on_synchronized();

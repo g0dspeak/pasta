@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2016, Monero Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
@@ -369,7 +369,7 @@ bool MLSAG_Ver(const key &message, const keyM &pk, const mgSig &rv, size_t dsRow
 //   thus this proves that "amount" is in [0, 2^64]
 //   mask is a such that C = aG + bH, and b = amount
 //verRange verifies that \sum Ci = C and that each Ci is a commitment to 0 or 2^i
-rangeSig proveRange(key &C, key &mask, const ryo_amount &amount)
+rangeSig proveRange(key &C, key &mask, const pasta_amount &amount)
 {
 	sc_0(mask.bytes);
 	identity(C);
@@ -701,11 +701,11 @@ void getKeyFromBlockchain(ctkey &a, size_t reference_index)
 //getKeyFromBlockchain grabs a key from the blockchain at "reference_index" to mix with
 //populateFromBlockchain creates a keymatrix with "mixin" + 1 columns and one of the columns is inPk
 //   the return value are the key matrix, and the index where inPk was put (random).
-tuple<ctkeyM, ryo_amount> populateFromBlockchain(ctkeyV inPk, int mixin)
+tuple<ctkeyM, pasta_amount> populateFromBlockchain(ctkeyV inPk, int mixin)
 {
 	int rows = inPk.size();
 	ctkeyM rv(mixin + 1, inPk);
-	int index = randRyoAmount(mixin);
+	int index = randpastaAmount(mixin);
 	int i = 0, j = 0;
 	for(i = 0; i <= mixin; i++)
 	{
@@ -713,7 +713,7 @@ tuple<ctkeyM, ryo_amount> populateFromBlockchain(ctkeyV inPk, int mixin)
 		{
 			for(j = 0; j < rows; j++)
 			{
-				getKeyFromBlockchain(rv[i][j], (size_t)randRyoAmount);
+				getKeyFromBlockchain(rv[i][j], (size_t)randpastaAmount);
 			}
 		}
 	}
@@ -725,15 +725,15 @@ tuple<ctkeyM, ryo_amount> populateFromBlockchain(ctkeyV inPk, int mixin)
 //getKeyFromBlockchain grabs a key from the blockchain at "reference_index" to mix with
 //populateFromBlockchain creates a keymatrix with "mixin" columns and one of the columns is inPk
 //   the return value are the key matrix, and the index where inPk was put (random).
-ryo_amount populateFromBlockchainSimple(ctkeyV &mixRing, const ctkey &inPk, int mixin)
+pasta_amount populateFromBlockchainSimple(ctkeyV &mixRing, const ctkey &inPk, int mixin)
 {
-	int index = randRyoAmount(mixin);
+	int index = randpastaAmount(mixin);
 	int i = 0;
 	for(i = 0; i <= mixin; i++)
 	{
 		if(i != index)
 		{
-			getKeyFromBlockchain(mixRing[i], (size_t)randRyoAmount(1000));
+			getKeyFromBlockchain(mixRing[i], (size_t)randpastaAmount(1000));
 		}
 		else
 		{
@@ -755,7 +755,7 @@ ryo_amount populateFromBlockchainSimple(ctkeyV &mixRing, const ctkey &inPk, int 
 //   must know the destination private key to find the correct amount, else will return a random number
 //   Note: For txn fees, the last index in the amounts vector should contain that
 //   Thus the amounts vector will be "one" longer than the destinations vectort
-rctSig genRct(const key &message, const ctkeyV &inSk, const keyV &destinations, const vector<ryo_amount> &amounts, const ctkeyM &mixRing, const keyV &amount_keys, const multisig_kLRki *kLRki, multisig_out *msout, unsigned int index, ctkeyV &outSk, hw::device &hwdev)
+rctSig genRct(const key &message, const ctkeyV &inSk, const keyV &destinations, const vector<pasta_amount> &amounts, const ctkeyM &mixRing, const keyV &amount_keys, const multisig_kLRki *kLRki, multisig_out *msout, unsigned int index, ctkeyV &outSk, hw::device &hwdev)
 {
 	GULPS_CHECK_AND_ASSERT_THROW_MES(amounts.size() == destinations.size() || amounts.size() == destinations.size() + 1, "Different number of amounts/destinations");
 	GULPS_CHECK_AND_ASSERT_THROW_MES(amount_keys.size() == destinations.size(), "Different number of amount_keys/destinations");
@@ -809,7 +809,7 @@ rctSig genRct(const key &message, const ctkeyV &inSk, const keyV &destinations, 
 	return rv;
 }
 
-rctSig genRct(const key &message, const ctkeyV &inSk, const ctkeyV &inPk, const keyV &destinations, const vector<ryo_amount> &amounts, const keyV &amount_keys, const multisig_kLRki *kLRki, multisig_out *msout, const int mixin, hw::device &hwdev)
+rctSig genRct(const key &message, const ctkeyV &inSk, const ctkeyV &inPk, const keyV &destinations, const vector<pasta_amount> &amounts, const keyV &amount_keys, const multisig_kLRki *kLRki, multisig_out *msout, const int mixin, hw::device &hwdev)
 {
 	unsigned int index;
 	ctkeyM mixRing;
@@ -820,7 +820,7 @@ rctSig genRct(const key &message, const ctkeyV &inSk, const ctkeyV &inPk, const 
 
 //RCT simple
 //for post-rct only
-rctSig genRctSimple(const key &message, const ctkeyV &inSk, const keyV &destinations, const vector<ryo_amount> &inamounts, const vector<ryo_amount> &outamounts, ryo_amount txnFee, const ctkeyM &mixRing, const keyV &amount_keys, const std::vector<multisig_kLRki> *kLRki, multisig_out *msout, const std::vector<unsigned int> &index, ctkeyV &outSk, bool bulletproof, hw::device &hwdev)
+rctSig genRctSimple(const key &message, const ctkeyV &inSk, const keyV &destinations, const vector<pasta_amount> &inamounts, const vector<pasta_amount> &outamounts, pasta_amount txnFee, const ctkeyM &mixRing, const keyV &amount_keys, const std::vector<multisig_kLRki> *kLRki, multisig_out *msout, const std::vector<unsigned int> &index, ctkeyV &outSk, bool bulletproof, hw::device &hwdev)
 {
 	GULPS_CHECK_AND_ASSERT_THROW_MES(inamounts.size() > 0, "Empty inamounts");
 	GULPS_CHECK_AND_ASSERT_THROW_MES(inamounts.size() == inSk.size(), "Different number of inamounts/inSk");
@@ -920,7 +920,7 @@ rctSig genRctSimple(const key &message, const ctkeyV &inSk, const keyV &destinat
 	return rv;
 }
 
-rctSig genRctSimple(const key &message, const ctkeyV &inSk, const ctkeyV &inPk, const keyV &destinations, const vector<ryo_amount> &inamounts, const vector<ryo_amount> &outamounts, const keyV &amount_keys, const std::vector<multisig_kLRki> *kLRki, multisig_out *msout, ryo_amount txnFee, unsigned int mixin, hw::device &hwdev)
+rctSig genRctSimple(const key &message, const ctkeyV &inSk, const ctkeyV &inPk, const keyV &destinations, const vector<pasta_amount> &inamounts, const vector<pasta_amount> &outamounts, const keyV &amount_keys, const std::vector<multisig_kLRki> *kLRki, multisig_out *msout, pasta_amount txnFee, unsigned int mixin, hw::device &hwdev)
 {
 	std::vector<unsigned int> index;
 	index.resize(inPk.size());
@@ -1197,7 +1197,7 @@ bool verRctNonSemanticsSimple(const rctSig &rv)
 //decodeRct: (c.f. http://eprint.iacr.org/2015/1098 section 5.1.1)
 //   uses the attached ecdh info to find the amounts represented by each output commitment
 //   must know the destination private key to find the correct amount, else will return a random number
-ryo_amount decodeRct(const rctSig &rv, const key &sk, unsigned int i, key &mask, hw::device &hwdev)
+pasta_amount decodeRct(const rctSig &rv, const key &sk, unsigned int i, key &mask, hw::device &hwdev)
 {
 	GULPS_CHECK_AND_ASSERT_MES(rv.type == RCTTypeFull, false, "decodeRct called on non-full rctSig");
 	GULPS_CHECK_AND_ASSERT_THROW_MES(i < rv.ecdhInfo.size(), "Bad index");
@@ -1224,13 +1224,13 @@ ryo_amount decodeRct(const rctSig &rv, const key &sk, unsigned int i, key &mask,
 	return h2d(amount);
 }
 
-ryo_amount decodeRct(const rctSig &rv, const key &sk, unsigned int i, hw::device &hwdev)
+pasta_amount decodeRct(const rctSig &rv, const key &sk, unsigned int i, hw::device &hwdev)
 {
 	key mask;
 	return decodeRct(rv, sk, i, mask, hwdev);
 }
 
-ryo_amount decodeRctSimple(const rctSig &rv, const key &sk, unsigned int i, key &mask, hw::device &hwdev)
+pasta_amount decodeRctSimple(const rctSig &rv, const key &sk, unsigned int i, key &mask, hw::device &hwdev)
 {
 	GULPS_CHECK_AND_ASSERT_MES(rv.type == RCTTypeSimple || rv.type == RCTTypeBulletproof, false, "decodeRct called on non simple rctSig");
 	GULPS_CHECK_AND_ASSERT_THROW_MES(i < rv.ecdhInfo.size(), "Bad index");
@@ -1257,7 +1257,7 @@ ryo_amount decodeRctSimple(const rctSig &rv, const key &sk, unsigned int i, key 
 	return h2d(amount);
 }
 
-ryo_amount decodeRctSimple(const rctSig &rv, const key &sk, unsigned int i, hw::device &hwdev)
+pasta_amount decodeRctSimple(const rctSig &rv, const key &sk, unsigned int i, hw::device &hwdev)
 {
 	key mask;
 	return decodeRctSimple(rv, sk, i, mask, hwdev);

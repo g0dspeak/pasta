@@ -1,4 +1,4 @@
-# Copyright (c) 2020, Ryo Currency Project
+# Copyright (c) 2020, pasta Currency Project
 # Portions copyright (c) 2014-2018, The Monero Project
 #
 # Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -50,10 +50,10 @@ set(multisig_headers)
 set(multisig_private_headers
   multisig.h)
 
-ryo_private_headers(multisig
+pasta_private_headers(multisig
   ${multisig_private_headers})
 
-ryo_add_library(multisig
+pasta_add_library(multisig
   ${multisig_sources}
   ${multisig_headers}
   ${multisig_private_headers})

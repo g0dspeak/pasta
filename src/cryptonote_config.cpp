@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
 // All rights reserved.
@@ -51,4 +51,4 @@ constexpr boost::uuids::uuid cryptonote::config<cryptonote::MAINNET>::NETWORK_ID
 constexpr boost::uuids::uuid cryptonote::config<cryptonote::TESTNET>::NETWORK_ID;
 constexpr boost::uuids::uuid cryptonote::config<cryptonote::STAGENET>::NETWORK_ID;
 
-constexpr const char* cryptonote::common_config::RYO_DONATION_ADDR;
+constexpr const char* cryptonote::common_config::pasta_DONATION_ADDR;

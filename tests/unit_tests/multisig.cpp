@@ -41,12 +41,12 @@ static const struct
 	const char *spendkey;
 } test_addresses[] =
 	{
-		// working with legacy address because new ryo addresses can not be recreated out of the spendkey
-		{"RYoTr1KP7tgJFQ4bTWto4MhM3qT4YA8gV3smuJyxucJgBDdCWehV4btgcyNb11MAUC7t9yPDUCwAoREVdyVNankWERkEddsUix3",
+		// working with legacy address because new pasta addresses can not be recreated out of the spendkey
+		{"pastaTr1KP7tgJFQ4bTWto4MhM3qT4YA8gV3smuJyxucJgBDdCWehV4btgcyNb11MAUC7t9yPDUCwAoREVdyVNankWERkEddsUix3",
 		 "ee0085dbecc26a02415b0b7abab1ce0ef2b18a393d35e39ef5720dd5ba058806"},
-		{"RYoTr2S1o1efcYh16gDXipgq2zypYd6pBJ6iofYemM9P3YUy815iS5ujDfmmNhbWGJPs17nNjxYTNh8LkJdvP7Y4QrD3xC5Xhxy",
+		{"pastaTr2S1o1efcYh16gDXipgq2zypYd6pBJ6iofYemM9P3YUy815iS5ujDfmmNhbWGJPs17nNjxYTNh8LkJdvP7Y4QrD3xC5Xhxy",
 		 "3fadeb3d58152b98db2e2788bdb57fdc5269e1cd8feb287d915b26a3f8ce610e"},
-		{"RYoTqzWU3x38P6uzJpXose4wxRx53RZXc6wipiTFqnuADaZdNYLcV8z9XSSsdcVQjKgkumTat2nJAZ1TYNL6w4bTQqm4apJepaw",
+		{"pastaTqzWU3x38P6uzJpXose4wxRx53RZXc6wipiTFqnuADaZdNYLcV8z9XSSsdcVQjKgkumTat2nJAZ1TYNL6w4bTQqm4apJepaw",
 		 "2a69fc7813c5b9af92f133d841c0859571956c2e544b5eab58d97c9df59ff000"}};
 
 static void make_wallet(unsigned int idx, tools::wallet2 &wallet)

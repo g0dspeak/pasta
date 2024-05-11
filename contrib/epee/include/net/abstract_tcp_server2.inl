@@ -452,7 +452,7 @@ bool connection<t_protocol_handler>::do_send(const void *ptr, size_t cb)
 				if(!all_ok)
 				{
 					GULPSF_LOG_L1("do_send() DONE ***FAILED*** from packet={} B for ptr={}", cb , ptr);
-					GULPSF_LOG_L1("do_send() SEND was aborted in middle of big package - this is mostly harmless (e.g. peer closed connection) but if it causes trouble tell us at https://github.com/ryo-currency/ryo. {}", cb);
+					GULPSF_LOG_L1("do_send() SEND was aborted in middle of big package - this is mostly harmless (e.g. peer closed connection) but if it causes trouble tell us at https://github.com/pasta-currency/pasta. {}", cb);
 					return false; // partial failure in sending
 				}
 				pos = pos + len;

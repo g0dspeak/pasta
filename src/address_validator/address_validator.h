@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2014-2018, The Monero Project
 //
 // Portions of this file are available under BSD-3 license. Please see ORIGINAL-LICENSE for details
@@ -58,10 +58,10 @@
  */
 namespace cryptonote
 {
-/*! validate ryo/sumokoin addresses
+/*! validate pasta/sumokoin addresses
    *
    * The validator is backward compatible to sumokoin addresses.
-   * A sumokoin address will be shown as RYO representation.
+   * A sumokoin address will be shown as pasta representation.
    */
 class address_validator
 {

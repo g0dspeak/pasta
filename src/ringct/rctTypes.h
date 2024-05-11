@@ -1,4 +1,4 @@
-// Copyright (c) 2020, Ryo Currency Project
+// Copyright (c) 2020, pasta Currency Project
 // Portions copyright (c) 2016, Monero Research Labs
 //
 // Author: Shen Noether <shen.noether@gmx.com>
@@ -69,7 +69,7 @@ extern "C" {
 #include "serialization/vector.h"
 #include "span.h"
 
-//atomic units of ryo
+//atomic units of pasta
 #define ATOMS 64
 
 //for printing large ints
@@ -146,12 +146,12 @@ struct ecdhTuple
 	BEGIN_SERIALIZE_OBJECT()
 	FIELD(mask)
 	FIELD(amount)
-	// FIELD(senderPk) // not serialized, as we do not use it in ryo currently
+	// FIELD(senderPk) // not serialized, as we do not use it in pasta currently
 	END_SERIALIZE()
 };
 
 //containers for representing amounts
-typedef uint64_t ryo_amount;
+typedef uint64_t pasta_amount;
 typedef unsigned int bits[ATOMS];
 typedef key key64[64];
 
@@ -266,7 +266,7 @@ struct rctSigBase
 	keyV pseudoOuts; //C - for simple rct
 	std::vector<ecdhTuple> ecdhInfo;
 	ctkeyV outPk;
-	ryo_amount txnFee; // contains b
+	pasta_amount txnFee; // contains b
 
 	template <bool W, template <bool> class Archive>
 	bool serialize_rctsig_base(Archive<W> &ar, size_t inputs, size_t outputs)
@@ -532,7 +532,7 @@ void dp(bool a);
 void dp(const char *a, int l);
 void dp(keyV a);
 void dp(keyM a);
-void dp(ryo_amount vali);
+void dp(pasta_amount vali);
 void dp(int vali);
 void dp(bits amountb);
 void dp(const char *st);
@@ -540,20 +540,20 @@ void dp(const char *st);
 //various conversions
 
 //uint long long to 32 byte key
-void d2h(key &amounth, ryo_amount val);
-key d2h(ryo_amount val);
+void d2h(key &amounth, pasta_amount val);
+key d2h(pasta_amount val);
 //uint long long to int[64]
-void d2b(bits amountb, ryo_amount val);
+void d2b(bits amountb, pasta_amount val);
 //32 byte key to uint long long
 // if the key holds a value > 2^64
 // then the value in the first 8 bytes is returned
-ryo_amount h2d(const key &test);
+pasta_amount h2d(const key &test);
 //32 byte key to int[64]
 void h2b(bits amountb2, const key &test);
 //int[64] to 32 byte key
 void b2h(key &amountdh, bits amountb2);
 //int[64] to uint long long
-ryo_amount b2d(bits amountb);
+pasta_amount b2d(bits amountb);
 
 static inline const rct::key pk2rct(const crypto::public_key& pk) { return (const rct::key&)pk; }
 static inline const rct::key sk2rct(const crypto::secret_key& sk) { return (const rct::key&)sk; }
